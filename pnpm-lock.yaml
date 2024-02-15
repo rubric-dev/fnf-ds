@@ -104,9 +104,6 @@ importers:
       eslint:
         specifier: ^8.49.0
         version: 8.56.0
-      eslint-config-fnf:
-        specifier: workspace:*
-        version: link:../eslint-config-fnf
       react:
         specifier: ^18.2.0
         version: 18.2.0
