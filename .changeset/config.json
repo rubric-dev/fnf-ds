@@ -7,5 +7,4 @@
   "linked": [],
   "access": "public",
   "updateInternalDependencies": "patch",
-  "ignore": ["@fnf-ds/storybook"]
 }
