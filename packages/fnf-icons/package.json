@@ -20,7 +20,6 @@
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "eslint": "^8.49.0",
-    "eslint-config-fnf": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tsup": "^7.2.0",

@@ -9,8 +9,5 @@
     "eslint-plugin-react": "7.29.4",
     "eslint-config-turbo": "latest"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  }
+  "private": true
 }
