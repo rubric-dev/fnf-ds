@@ -1,0 +1,29 @@
+{
+  "name": "@fnf-ds/web",
+  "version": "0.1.28",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fnf-ds/icons": "workspace:*",
+    "@fnf-ds/ui": "workspace:*",
+    "@tanstack/react-table": "^8.9.7",
+    "@types/node": "^18.17.15",
+    "@types/react": "^18.2.21",
+    "@types/react-datepicker": "^4.15.0",
+    "@types/react-dom": "^18.2.7",
+    "next": "^13.4.19",
+    "react": "^18.2.0",
+    "react-datepicker": "^4.17.0",
+    "react-dom": "^18.2.0",
+    "react-select": "^5.7.4",
+    "react-select-async-paginate": "^0.7.3",
+    "styled-components": "^6.0.7",
+    "stylis": "^4.3.0",
+    "typescript": "^5.2.2"
+  }
+}

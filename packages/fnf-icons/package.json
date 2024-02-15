@@ -1,0 +1,36 @@
+{
+  "name": "@fnf-ds/icons",
+  "version": "1.4.5",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "devDependencies": {
+    "@fnf-ds/tsconfig": "workspace:*",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "eslint": "^8.49.0",
+    "eslint-config-fnf": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
