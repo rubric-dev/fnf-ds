@@ -37,6 +37,7 @@ export const FilePicker = ({
   buttonText = defaultButtonText,
   onBlur,
   onChange,
+  ...rest
 }: FilePickerProps) => {
   const [files, setFiles] = useState<File[]>([]);
   const [inputFocused, setInputFocused] = useState(false);

@@ -1,5 +1,5 @@
 import { GlobalStyle } from "@/styles/GlobalStyles";
-import { InterfaceArrowLeftIcon } from "../../../../packages/fnf-ds-icons/dist";
+import { InterfaceArrowLeftIcon } from "../../../../packages/fnf-icons/dist";
 import {
   Box,
   CustomTheme,
