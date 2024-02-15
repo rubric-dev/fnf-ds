@@ -9,7 +9,7 @@ import {
   FieldProps,
 } from "./Field.types";
 import { Tooltip } from "../Tooltip";
-import { AlertInfoIcon } from "../../../fnf-ds-icons/src";
+import { AlertInfoIcon } from "../../../fnf-icons/src";
 
 export const Field = ({ direction = "vertical", ...props }: FieldProps) => {
   if (direction === "vertical") {
