@@ -1,4 +1,4 @@
-import { ActionTickIcon } from "../../../../fnf-ds-icons/src";
+import { ActionTickIcon } from "../../../../fnf-icons/src";
 import * as Styled from "./Step.styled";
 import { StepProps, StepStatus } from "./Step.types";
 

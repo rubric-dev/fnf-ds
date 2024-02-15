@@ -30,7 +30,7 @@ import {
   ActionSearchIcon,
   ActionSmallCrossIcon,
   InterfaceCaretDownIcon,
-} from "../../../fnf-ds-icons/src";
+} from "../../../fnf-icons/src";
 import { Paragraph } from "../@foundations/Typography";
 import { Option } from "../Dropdown";
 import { Box } from "../Layout";

@@ -4,7 +4,12 @@ import { PaginationProps, PaginationButtonProps } from "./Pagination.types";
 import {
   InterfaceChevronLeftIcon,
   InterfaceChevronRightIcon,
-} from "../../../fnf-ds-icons/src";
+} from "../../../fnf-icons/src";
+// import {
+
+//   InterfaceChevronLeftIcon,
+//   InterfaceChevronRightIcon,
+// } from "../../../fnf-icons/src";
 import { Box } from "../Layout";
 import { Headline } from "../@foundations";
 import { IconButton } from "../IconButton";
