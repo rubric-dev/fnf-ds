@@ -1,7 +1,7 @@
 import {
   ActionChatIcon,
   InterfaceMoreIcon,
-} from "../../../../packages/fnf-ds-icons/dist";
+} from "../../../../packages/fnf-icons/dist";
 import {
   Cell,
   Dropdown,

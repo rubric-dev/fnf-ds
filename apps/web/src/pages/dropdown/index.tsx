@@ -1,4 +1,4 @@
-import { ActionChatIcon } from "../../../../../packages/fnf-ds-icons/dist";
+import { ActionChatIcon } from "../../../../../packages/fnf-icons/dist";
 import {
   Box,
   Button,

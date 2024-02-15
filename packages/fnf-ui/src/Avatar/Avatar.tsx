@@ -1,6 +1,7 @@
 import { forwardRef, useCallback, useState } from "react";
 import { getInitial } from "../utils/badge.utils";
 import * as Styled from "./Avatar.styled";
+import React from "react";
 import { AvatarProps } from "./Avatar.types";
 
 export const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
