@@ -1,4 +1,4 @@
-import { ActionTickIcon } from "../../../../fnf-ds-icons/src";
+import { ActionTickIcon } from "../../../../fnf-icons/src";
 import { MenuRow } from "../MenuRow";
 import * as Styled from "./MenuOptionsGroup.styled";
 import { MenuOptionsGroupProps } from "./MenuOptionsGroup.types";

@@ -6,7 +6,7 @@ import {
 } from "./SelectRow.types";
 import * as Styled from "./SelectRow.styled";
 import { forwardRef, useEffect, useRef } from "react";
-import { ActionSearchIcon } from "../../../../fnf-ds-icons/src";
+import { ActionSearchIcon } from "../../../../fnf-icons/src";
 
 const SearchRow = forwardRef<HTMLDivElement, SelectRowSearch>((props, ref) => {
   const { inputValue, onChange } = props;
