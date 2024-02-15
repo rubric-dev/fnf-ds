@@ -7,6 +7,7 @@ import { Colors } from ".";
 import { theme as defaultTheme } from "./theme";
 import { ColorTokenType } from "./theme/colorToken";
 import { CommonStyles } from "./theme/commonStyles";
+import React from "react";
 
 export type CustomTheme = Partial<ColorTokenType> & {
   colors?: Partial<Colors>;

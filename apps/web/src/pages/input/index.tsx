@@ -1,7 +1,7 @@
 import {
   ActionSearchIcon,
   InterfaceCaretDownIcon,
-} from "../../../../../packages/fnf-ds-icons/dist";
+} from "../../../../../packages/fnf-icons/dist";
 import { Box, TextInput, Field } from "@fnf-ds/ui";
 import { useState } from "react";
 import DatePicker from "react-datepicker";

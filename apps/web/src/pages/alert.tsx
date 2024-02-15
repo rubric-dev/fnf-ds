@@ -1,4 +1,4 @@
-import { AlertInfoIcon } from "../../../../packages/fnf-ds-icons/dist";
+import { AlertInfoIcon } from "../../../../packages/fnf-icons/dist";
 import { Alert, Box, Button, toaster } from "@fnf-ds/ui";
 
 const AlertTest = () => {
