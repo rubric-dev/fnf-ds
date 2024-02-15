@@ -1,0 +1,56 @@
+{
+  "name": "@fnf-ds/ui",
+  "version": "1.10.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "devDependencies": {
+    "@fnf-ds/tsconfig": "workspace:*",
+    "@fnf-ds/utils": "workspace:*",
+    "@tanstack/react-table": "^8.9.7",
+    "@types/node": "^18.17.15",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "@types/react-transition-group": "^4.4.6",
+    "@types/shallowequal": "^1.1.1",
+    "eslint": "^8.49.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-select": "^5.7.4",
+    "react-select-async-paginate": "^0.7.3",
+    "react-transition-group": "^4.4.5",
+    "rxjs": "^7.8.1",
+    "shallowequal": "^1.1.0",
+    "styled-components": "^6.0.7",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-select": "^5.7.1",
+    "react-select-async-paginate": "^0.7.2",
+    "styled-components": "^6.0.5"
+  },
+  "dependencies": {
+    "@types/react-ranger": "^2.0.1",
+    "@types/uuid": "^9.0.4",
+    "react-ranger": "^2.1.0",
+    "stylis": "^4.3.0",
+    "uuid": "^9.0.1"
+  }
+}
