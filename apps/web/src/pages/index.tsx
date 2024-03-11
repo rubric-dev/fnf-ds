@@ -1,16 +1,21 @@
 import {
+  AsyncSelect,
   Badge,
   Box,
   ButtonGroup,
   Checkbox,
   LinkButton,
+  Option,
   Link as ParteLink,
+  SelectAdditional,
   TextInput,
   Toggle,
 } from "@fnf-ds/ui";
 import Head from "next/head";
 import Link from "next/link";
-import { AnchorHTMLAttributes, forwardRef, useState } from "react";
+import { AnchorHTMLAttributes, forwardRef, useCallback, useState } from "react";
+import { GroupBase, MenuListProps, components } from "react-select";
+import { LoadOptions } from "react-select-async-paginate";
 import styled, { css, useTheme } from "styled-components";
 
 const MENU = [
@@ -33,6 +38,23 @@ export default function Home() {
   const [toggle, setToggle] = useState(true);
 
   const [index, setIndex] = useState(0);
+  const loadOptions = useCallback(async (search: string) => {
+    try {
+      const { data } = await getMockStyles();
+
+      return {
+        options: data.map((prod) => {
+          return {
+            label: stringifySpcsForSelect(prod),
+            value: prod,
+          };
+        }),
+        hasMore: false,
+      };
+    } catch (e) {
+      return { options: [], hasMore: false };
+    }
+  }, []);
 
   return (
     <>
@@ -111,10 +133,21 @@ export default function Home() {
         <ParteLink disabled href="/input">
           파르테 링크
         </ParteLink>
+        <AsyncSelect
+          loadOptions={loadOptions}
+          isMulti
+          components={customComponents}
+        />
       </Box>
     </>
   );
 }
+const MenuList = ({ children, ...props }: MenuListProps) => {
+  return (
+    <components.MenuList {...props}>TEST!!!{children}</components.MenuList>
+  );
+};
+const customComponents = { MenuList };
 
 const CustomAnchor = forwardRef<
   HTMLAnchorElement,
@@ -152,3 +185,102 @@ const LinkContainer = styled.div`
     `;
   }}
 `;
+
+type SsnSCS = {
+  ssnCd: string;
+  prodCd: string;
+  colorCd: string;
+  sizCd: string;
+};
+export const MOCK_SPCS: SsnSCS[] = [
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50BKS", sizCd: "XS" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50BKS", sizCd: "S" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50BKS", sizCd: "M" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50BKS", sizCd: "L" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50BKS", sizCd: "XL" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50CRS", sizCd: "XS" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50CRS", sizCd: "S" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50CRS", sizCd: "M" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50CRS", sizCd: "L" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50CRS", sizCd: "XL" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50LDS", sizCd: "XS" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50LDS", sizCd: "S" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50LDS", sizCd: "M" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50LDS", sizCd: "L" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50LDS", sizCd: "XL" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50IVS", sizCd: "XS" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50IVS", sizCd: "S" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50IVS", sizCd: "M" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50IVS", sizCd: "L" },
+  { ssnCd: "24F", prodCd: "3AMTB0331", colorCd: "50IVS", sizCd: "XL" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50BKS", sizCd: "XS" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50BKS", sizCd: "S" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50BKS", sizCd: "M" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50BKS", sizCd: "L" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50BKS", sizCd: "XL" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50CRS", sizCd: "XS" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50CRS", sizCd: "S" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50CRS", sizCd: "M" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50CRS", sizCd: "L" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50CRS", sizCd: "XL" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50LDS", sizCd: "XS" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50LDS", sizCd: "S" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50LDS", sizCd: "M" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50LDS", sizCd: "L" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50LDS", sizCd: "XL" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50IVS", sizCd: "XS" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50IVS", sizCd: "S" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50IVS", sizCd: "M" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50IVS", sizCd: "L" },
+  { ssnCd: "24F", prodCd: "3AMTB0126", colorCd: "50IVS", sizCd: "XL" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50BKS", sizCd: "XS" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50BKS", sizCd: "S" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50BKS", sizCd: "M" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50BKS", sizCd: "L" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50BKS", sizCd: "XL" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50CRS", sizCd: "XS" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50CRS", sizCd: "S" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50CRS", sizCd: "M" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50CRS", sizCd: "L" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50CRS", sizCd: "XL" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50LDS", sizCd: "XS" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50LDS", sizCd: "S" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50LDS", sizCd: "M" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50LDS", sizCd: "L" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50LDS", sizCd: "XL" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50IVS", sizCd: "XS" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50IVS", sizCd: "S" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50IVS", sizCd: "M" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50IVS", sizCd: "L" },
+  { ssnCd: "24S", prodCd: "3AMTB0331", colorCd: "50IVS", sizCd: "XL" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50BKS", sizCd: "XS" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50BKS", sizCd: "S" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50BKS", sizCd: "M" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50BKS", sizCd: "L" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50BKS", sizCd: "XL" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50CRS", sizCd: "XS" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50CRS", sizCd: "S" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50CRS", sizCd: "M" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50CRS", sizCd: "L" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50CRS", sizCd: "XL" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50LDS", sizCd: "XS" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50LDS", sizCd: "S" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50LDS", sizCd: "M" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50LDS", sizCd: "L" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50LDS", sizCd: "XL" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50IVS", sizCd: "XS" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50IVS", sizCd: "S" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50IVS", sizCd: "M" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50IVS", sizCd: "L" },
+  { ssnCd: "24S", prodCd: "3AMTB0126", colorCd: "50IVS", sizCd: "XL" },
+];
+
+export const getMockStyles = () =>
+  new Promise<{ data: SsnSCS[] }>((resolve) => {
+    setTimeout(() => {
+      resolve({ data: MOCK_SPCS });
+    }, 300);
+  });
+
+const stringifySpcsForSelect = (data: SsnSCS) =>
+  `${data.ssnCd} / ${data.prodCd} / ${data.colorCd} / ${data.sizCd}`;
