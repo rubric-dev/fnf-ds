@@ -309,7 +309,7 @@ const AsyncSelectComponent = <
     width,
   });
 
-  const defaultComponents = useMemo(
+  const asyncComponents = useMemo(
     () => ({
       Menu,
       Control: (props: ControlProps<T, K, G>) => (
@@ -327,10 +327,6 @@ const AsyncSelectComponent = <
     [customComponents, showSearchIcon]
   );
 
-  const asyncComponents = useComponents(defaultComponents);
-  const MenuList = wrapMenuList(customMenuList) as ComponentType<
-    MenuListProps<T, K, G>
-  >;
   return (
     <AsyncPaginate
       selectRef={ref as any}
@@ -339,10 +335,7 @@ const AsyncSelectComponent = <
       isSearchable
       {...selectProps}
       isMulti={isMulti}
-      components={{
-        ...asyncComponents,
-        MenuList,
-      }}
+      components={asyncComponents}
       isDisabled={isDisabled}
       styles={styles}
       placeholder={placeholder}

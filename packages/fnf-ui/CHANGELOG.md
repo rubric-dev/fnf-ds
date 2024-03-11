@@ -1,5 +1,11 @@
 # @fnf-ds/ui
 
+## 1.10.1
+
+### Patch Changes
+
+- Async select에 custom components 주입가능하도록 수정
+
 ## 1.10.0
 
 ### Minor Changes
