@@ -1,5 +1,12 @@
 # @fnf-ds/web
 
+## 0.1.30
+
+### Patch Changes
+
+- Updated dependencies
+  - @fnf-ds/ui@1.10.2
+
 ## 0.1.29
 
 ### Patch Changes
