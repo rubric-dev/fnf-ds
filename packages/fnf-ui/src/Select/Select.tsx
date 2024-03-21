@@ -1,5 +1,4 @@
 import {
-  ComponentType,
   ForwardedRef,
   ReactElement,
   ReactNode,
@@ -12,6 +11,7 @@ import StaticSelect, {
   DropdownIndicatorProps,
   GroupBase,
   IndicatorsContainerProps,
+  InputProps,
   MenuListProps,
   MenuProps,
   MultiValueRemoveProps,
@@ -20,11 +20,7 @@ import StaticSelect, {
   SelectInstance,
   components,
 } from "react-select";
-import {
-  AsyncPaginate,
-  useComponents,
-  wrapMenuList,
-} from "react-select-async-paginate";
+import { AsyncPaginate } from "react-select-async-paginate";
 import {
   ActionDeleteIcon,
   ActionSearchIcon,
@@ -60,6 +56,21 @@ export const Control = <
       )}
       {children}
     </components.Control>
+  );
+};
+
+export const Input = <
+  T,
+  K extends boolean,
+  G extends GroupBase<T> = GroupBase<T>
+>({
+  children,
+  ...props
+}: InputProps<T, K, G>) => {
+  return (
+    <components.Input {...props} aria-activedescendant={undefined}>
+      {children}
+    </components.Input>
   );
 };
 
@@ -260,6 +271,7 @@ const SelectComponent = <
       Option: OptionComponent,
       LoadingMessage,
       NoOptionsMessage,
+      Input,
       ...customComponents,
     }),
     [customComponents, showSearchIcon]
@@ -322,6 +334,7 @@ const AsyncSelectComponent = <
       Option: OptionComponent,
       LoadingMessage,
       NoOptionsMessage,
+      Input,
       ...customComponents,
     }),
     [customComponents, showSearchIcon]

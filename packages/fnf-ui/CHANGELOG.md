@@ -1,5 +1,11 @@
 # @fnf-ds/ui
 
+## 1.10.2
+
+### Patch Changes
+
+- Fix Select Hydration error
+
 ## 1.10.1
 
 ### Patch Changes
